@@ -21,7 +21,7 @@ public_df['workPilingUp'] = public_df['workPilingUp'].map(workLevels)
 # public_df[['trigger', 'spendingDayOther', 'otherEmotion']] = public_df[['trigger', 'spendingDayOther', 'otherEmotion']].fillna('')
 
 # split train/test
-train, test = train_test_split(public_df, shuffle=True)
+# train, test = train_test_split(public_df, shuffle=True)
 
 # cols to keep
 cols_to_keep = ['responseLagSeconds',
@@ -49,9 +49,20 @@ def create_subset(df, cols_to_keep):
     subset = df[cols_to_keep]
     return subset
 
-def dummify(df, colName):
+def dummify_clustering(df, colName):
     colName_cols = pd.get_dummies(df[colName])
     df[colName_cols.columns] = colName_cols
     df.drop([colName], axis=1, inplace=True)
 
+def dummify_regression(df, colName):
+    colName_cols = pd.get_dummies(df[colName]).iloc[:,1:]
+    df[colName_cols.columns] = colName_cols
+    df.drop([colName], axis=1, inplace=True)
+
+subset = create_subset(public_df, cols_to_keep)
+
+# transform NaN's
+subset['responseLagSeconds'] = subset['responseLagSeconds'].fillna(subset['responseLagSeconds'].mode()[0])
+subset[['generalTrigger', 'specificTrigger', 'workPilingUp']] = subset[['generalTrigger', 'specificTrigger', 'workPilingUp']].fillna(0)
+subset.fillna(subset.mean(), inplace=True)
 
