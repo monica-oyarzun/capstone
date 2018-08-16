@@ -1,2 +1,12 @@
 .ipynb_checkpoints
 data/
+DBSCAN.ipynb
+kMeans_cats.ipynb
+kMeans_w_NMF.ipynb
+NLP.ipynb
+NLP_traintest.ipynb
+pilot-EDA.ipynb
+Regression_Models.ipynb
+research_deets.ipynb
+updated_survey.ipynb 
+
