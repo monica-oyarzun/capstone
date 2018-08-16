@@ -30,3 +30,4 @@ The silhouette graphs for varied n_clusters, with 8 principal components, are be
 
 Results were clustered based on the primary emotions of anger, fear, enjoyment and sadness. Enjoyment has 4 separate clusters, that are split by the top 3 enjoyment triggers of wellbeing, social support, and work satisfaction. Fear and Anger were split into two clusters each, divided by social stress and work stress. And sadness made up the 9th cluster all on its own. These clusters make sense and support my findings from my initial exploratory analysis. Below are details for each cluster:
 
+![Cluster Results](https://github.com/monica-oyarzun/capstone/blob/master/pictures/cluster_results.png?raw=true)
