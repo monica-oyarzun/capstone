@@ -19,14 +19,25 @@ The data I am working with is from this larger population, and consists of respo
 
 Initial data analysis showed that this population tracked over 50% of their daily emotions as positive emotions of enjoyment, resulting primarily from triggers of wellbeing, work satisfaction, and social support. These findings can be seen in the counts of the plots below. 
 
+![genEmotions](https://github.com/monica-oyarzun/inside-out/blob/master/pictures/genEmotions.png?raw=true)
+
+![genTriggers](https://github.com/monica-oyarzun/inside-out/blob/master/pictures/genTriggers.png?raw=true)
+
+![genEmotions_genTriggers](https://github.com/monica-oyarzun/inside-out/blob/master/pictures/genEmotions_genTriggers.png?raw=true)
+
 ## Clustering Model
 
 I hoped to use the data to try to predict burnout rates, but in the end it didn’t present a clear target for any kind of predictions. I opted to explore unsupervised learning methods instead, and used kMeans clustering to categorize the data points. The data is comprised of predominantly categorical features, and after dummifying these to prepare for a clustering model, I had 98 columns. I performed Principal Component Analysis to reduce this to 8, and reviewed various numbers of clusters to compare silhouette scores. The silhouette scores offer a representation of how well the defined clusters belong together, with values near 1 showing clearly definitive clusters and values near 0 showing points that fall along the boundary of a neighboring cluster. Negative values represent points that were clustered incorrectly.
 
-The silhouette graphs for varied n_clusters, with 8 principal components, are below. I chose 9 clusters, because that model reflected the highest average silhouette score at .381 and clusters that all form points beyond that average. Additionally, those clusters had the least values extending into the negative.
+The silhouette graphs for varied n_clusters, with 8 principal components, are below. I chose 9 clusters, which is the first image pictured below, because that model reflected the highest average silhouette score at .381 and clusters that all form points beyond that average. Additionally, those clusters had the least values extending into the negative.
+
+![9_clusters](https://github.com/monica-oyarzun/inside-out/blob/master/pictures/9_clusters.png?raw=true)
+![8_clusters](https://github.com/monica-oyarzun/inside-out/blob/master/pictures/8_clusters.png?raw=true)
+![5_clusters](https://github.com/monica-oyarzun/inside-out/blob/master/pictures/5_clusters.png?raw=true)
 
 
 ## Clustering Results
 
 Results were clustered based on the primary emotions of anger, fear, enjoyment and sadness. Enjoyment has 4 separate clusters, that are split by the top 3 enjoyment triggers of wellbeing, social support, and work satisfaction. Fear and Anger were split into two clusters each, divided by social stress and work stress. And sadness made up the 9th cluster all on its own. These clusters make sense and support my findings from my initial exploratory analysis. Below are details for each cluster:
 
+![Cluster Results](https://github.com/monica-oyarzun/capstone/blob/master/pictures/cluster_results.png?raw=true)
