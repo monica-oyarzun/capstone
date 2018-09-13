@@ -38,6 +38,13 @@ The silhouette graphs for varied n_clusters, with 8 principal components, are be
 
 ## Clustering Results
 
-Results were clustered based on the primary emotions of anger, fear, enjoyment and sadness. Enjoyment has 4 separate clusters, that are split by the top 3 enjoyment triggers of wellbeing, social support, and work satisfaction. Fear and Anger were split into two clusters each, divided by social stress and work stress. And sadness made up the 9th cluster all on its own. These clusters make sense and support my findings from my initial exploratory analysis. Below are details for each cluster:
+Results were clustered based on the primary emotions of anger, fear, enjoyment and sadness. Enjoyment has 4 separate clusters, that are split by the top 3 enjoyment triggers of wellbeing, social support, and work satisfaction. Fear and Anger were split into two clusters each, divided by social stress and work stress. And sadness made up the 9th cluster all on its own. These clusters make sense and support my findings from my initial exploratory analysis. Below are details and key words for each cluster:
 
 ![Cluster Results](https://github.com/monica-oyarzun/capstone/blob/master/pictures/cluster_results.png?raw=true)
+
+## Next Steps
+
+The data contains a trigger column in which participants entered free form text to describe their emotional trigger. I performed Natural Language Processing on this column, and am planning to perform clustering on the TF-IDF matrix to see if the algorithm finds similar clusters to those outlined above. 
+
+I also plan to explore the clusters deeper to understand whether some participants’ entries fall more in one than another. There are multiple entries per participant, and currently the model doesn’t differentiate by individual.
+
